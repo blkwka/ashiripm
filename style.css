@@ -14,12 +14,12 @@ body {
 
 @font-face {
   font-family: "Nunito";
-  src: url("fonts/Nunito.ttf") format("opentype");
+  src: url("Nunito.ttf") format("opentype");
 }
 
 @font-face {
   font-family: "Reparade";
-  src: url("fonts/Reparade.ttf") format("opentype");
+  src: url("Reparade.ttf") format("opentype");
 }
 
 @keyframes fadeInAnimation {
