@@ -1,0 +1,287 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  /* background: rgba(1, 2, 8, 255); */
+  background: white;
+  color: white;
+}
+
+
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Reparade";
+  src: url("fonts/Reparade.ttf") format("opentype");
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blur {
+  filter: blur(0px);
+  transition: filter .5s;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background-color: #436fb6;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#brand {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: #05050b;
+  font-family: 'Reparade', sans-serif;
+  letter-spacing: 1px;
+}
+
+#brand a:hover {
+  color: #325285;
+  font-family: 'Reparade', sans-serif;
+  letter-spacing: 1px;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {}
+
+/* language */
+li.dropdown {
+  position: relative;
+}
+
+ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #05050b;
+  z-index: 1;
+  min-width: 110px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  left: -35px;
+  /* Adjust this value as needed to move the dropdown to the left */
+  top: 60px
+}
+
+ul.dropdown-content li {
+  padding: 5px;
+  text-align: center;
+}
+
+ul.dropdown-content a {
+  color: white;
+  text-decoration: none;
+}
+
+ul.dropdown-content li:hover {
+  background-color: #436fb6;
+  transition: 0.3s;
+}
+
+li img {
+  width: 55px;
+  height: 55px;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1px;
+  /* Adjust this value to your preference */
+}
+
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+  /* background-color: white; */
+  padding-top: 5%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+  background-color: #05050b;
+  width: 90%;
+  text-align: center;
+  z-index: 1;
+}
+
+.mobile-menu li a:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------- */
+
+
+.menu-opened {
+  filter: blur(8px);
+  user-select: none;
+  z-index: -1;
+}
+
+.body {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  color: black;
+  animation: fadeInAnimation .5s alternate;
+  padding: 0 10%;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+#strike {
+  text-decoration: line-through;
+  color: black;
+  padding-bottom: 20px;
+}
+
+br {
+  padding-top: 5%;
+}
+
+/* Style the footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #325285;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style the footer content */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the link */
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-content a:hover {
+  color: #FF5733;
+  /* Change the link color on hover */
+}
+
+.small {
+  font-size: .8rem;
+}
+
+@media only screen and (min-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+
+  .body {
+    padding: 0 10%;
+    font-size: .7rem;
+    margin-top: 20px;
+  }
+
+  footer {
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 10px;
+  }
+
+  .small {
+    font-size: .4rem;
+  }
+
+}
