@@ -1,0 +1,312 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>ashiri</title>
+  <link rel="icon" type="image/png" href="/images/flower.png">
+</head>
+
+<style>
+
+  body {
+    overflow: hidden;
+  }
+  
+  ul {
+    display: flex;
+    /* Display list items horizontally */
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Styling the navigation bar */
+  nav {
+    padding: 10px 0;
+  }
+
+  /* li {
+    margin: 0 10px;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.2s;
+  } */
+
+  ul li a {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  #strike {
+    color: white;
+  }
+
+  header {
+    background-color: transparent;
+  }
+
+  .pfp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+  }
+
+  .pfp-container img {
+    width: 9em;
+    height: 9em;
+    /* border-radius: 10%; */
+    /* border: 5px solid #fff; */
+    transition: border 0.5s ease, transform 0.5s ease;
+
+  }
+
+  #hamburger-icon div {
+    background-color: black;
+  }
+
+  .mobile-menu li {
+    margin-bottom: 10px;
+    background-color: black;
+    width: 90%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .instagram {
+    background: rgb(138, 10, 250);
+    background: linear-gradient(90deg, rgba(138, 10, 250, 1) 0%, rgba(252, 1, 216, 1) 34%, rgba(255, 30, 48, 1) 60%, rgba(255, 194, 0, 1) 84%);
+  }
+
+  .discord {
+    background: rgb(88, 101, 242);
+
+  }
+
+  .twitter {
+    background: #1d9bf0;
+  }
+
+  .youtube {
+    background: #ff0000;
+  }
+
+  .tiktok {
+    background: rgb(1, 246, 239);
+    background: linear-gradient(90deg, rgba(1, 246, 239, 1) 0%, rgba(252, 1, 80, 1) 100%);
+  }
+
+  @keyframes bounceUpDown {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(5px);
+      /* Adjust the distance the arrow moves */
+    }
+  }
+
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .social-media-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 60%;
+    border: 5px solid #010100;
+    transition: transform 0.2s;
+  }
+
+  .social-media-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    /* animation: bounceUpDown 1s infinite alternate; */
+  }
+
+  .social-media-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .social-media-name {
+    flex-grow: 1;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .share-button {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding-right: 5%;
+  }
+
+  main {
+    padding-bottom: 10%;
+  }
+
+  .footer-content-social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 20px;
+    background-color: rgba(50, 82, 133, 0);
+  }
+
+
+  .footer-content-social a {
+    /* background-color: transparent; */
+    display: none;
+  }
+
+  ul.dropdown-content li:hover {
+    background-color: gray;
+    transition: 0.3s;
+  }
+
+  @media only screen and (max-width: 600px) {
+    ul li a {
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .social-media-button {
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    .footer-content-social {
+      display: none;
+    }
+
+    .pfp-container img {
+      width: 5em;
+      height: 5em;
+      /* border-radius: 10%; */
+      /* border: 5px solid #fff; */
+      transition: border 0.5s ease, transform 0.5s ease;
+
+    }
+
+  }
+</style>
+
+<body>
+  <header>
+    <div id="brand"><a href="/">Ashiri's Garden </a></div>
+    <nav>
+      <ul>
+        <li><a href="" id="strike">projects</a></li>
+        <li><a href="" id="strike">shop</a></li>
+        <li><a href="socials.html">socials</a></li>
+        <li><a href="about.html">about</a></li>
+        <li class="dropdown" onclick="toggleDropdown()">
+          <a href="#"><img src="images/languageblk.png"></a>
+          <ul id="languageDropdown" class="dropdown-content">
+            <li onclick="location.href='socials.html'"><a href="#">English</a></li>
+            <li onclick="location.href='socialsesp.html'"><a href="#">Spanish</a></li>
+            <!-- Add more languages as needed -->
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      <ul class="mobile-menu">
+        <li onclick="location.href='socials.html'"><a>socials</a></li>
+        <li onclick="location.href='about.html'"><a>about</a></li>
+        <!-- <li onclick="'"> <a id="strike">projects</a></li> -->
+        <!-- <li onclick="'"><a id="strike">shop</a></li> -->
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content" class="blur">
+    <div class="pfp-container">
+      <img src="images/AshiriLogo.svg">
+    </div>
+
+    <div class="socials">
+      <div class="social-media-button instagram" onclick="openInNewTab('https://www.instagram.com/ashiripm/')">
+        <img src="images/socials/instagram.png" class="social-media-icon">
+        <span class="social-media-name">instagram</span>
+        <button class="share-button" data-link="https://www.example.com"></button>
+      </div>
+      <div class="social-media-button discord" onclick="openInNewTab('https://discord.gg/x6XjZVmjsE')">
+        <img src="images/socials/discord.png" class="social-media-icon">
+        <span class="social-media-name">discord</span>
+        <button class="share-button"></button>
+      </div>
+      <div class="social-media-button twitter" onclick="openInNewTab('https://twitter.com/ashiripm')">
+        <img src="images/socials/twitter.png" class="social-media-icon">
+        <span class="social-media-name">twitter</span>
+        <button class="share-button"></button>
+      </div>
+      <div class="social-media-button youtube"
+        onclick="openInNewTab('https://www.youtube.com/channel/UCq4DpB3ovGjZRmfyRHdn-sQ')">
+        <img src="images/socials/youtube.png" class="social-media-icon">
+        <span class="social-media-name">youtube</span>
+        <button class="share-button"></button>
+      </div>
+      <div class="social-media-button tiktok" onclick="openInNewTab('https://www.tiktok.com/@ashiripm')">
+        <img src="images/socials/tiktok.png" class=" social-media-icon">
+        <span class="social-media-name">tiktok</span>
+        <button class="share-button"></button>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="footer-content-social">
+    <p class="small">&copy; 2023 Ashiri's Garden</p>
+    <p><a target="_blank" href="billkawaka.com">www.billkawaka.com</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
